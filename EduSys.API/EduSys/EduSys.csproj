@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObject.Abstract\BusinessObject.Abstract.csproj" />
+    <ProjectReference Include="..\BusinessObject.Impl\BusinessObject.Impl.csproj" />
+    <ProjectReference Include="..\Datastore.Abstract\Datastore.Abstract.csproj" />
+    <ProjectReference Include="..\Datastore.Impl\Datastore.Impl.csproj" />
+  </ItemGroup>
+
+</Project>
