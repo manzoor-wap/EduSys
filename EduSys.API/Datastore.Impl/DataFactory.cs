@@ -66,5 +66,56 @@ namespace Datastore.Impl
                 return true;
             });
         }
+
+        public async Task<IBook> GetBook(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Books.Find(u => u.BookId == id);
+            });
+        }
+
+        public async Task<IEnumerable<IBook>> GetBooks()
+        {
+            return await Task.Run(() => {
+                return datastore.Books;
+            });
+        }
+
+        public async Task<bool> CreateBook(Book book)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Books.Add(book);
+                return true;
+            });
+        }
+
+        public async Task<bool> DeleteBook(Book book)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Books.Remove(book);
+                return true;
+            });
+        }
+
+        public async Task<bool> UpdateBook(Book book)
+        {
+            return await Task.Run(() => {
+                Book existingBook = datastore.Books.Find(u => u.BookId == book.BookId);
+
+                ///existingUser.CompanyId = user.CompanyId;
+
+                existingBook.Name = book.Name;
+               
+                existingBook.Status = book.Status;
+                existingBook.UpdateBy = book.UpdateBy;
+                existingBook.UpdatedDate = DateTime.Now;
+
+
+                return true;
+            });
+        }
     }
 }

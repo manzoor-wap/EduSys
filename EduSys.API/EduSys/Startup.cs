@@ -32,6 +32,9 @@ namespace EduSys
         {
             services.AddScoped<IUserBusinessObject, UserBusinessObject>();
             services.AddScoped<IUser, User>();
+
+            services.AddScoped<IBookBusinessObject, BookBusinessObject>();
+            services.AddScoped<IBook, Book>();
             services.AddScoped<IBaseModel, BaseModel>();
             services.AddScoped<IDataFactory, DataFactory>();
             services.AddControllersWithViews();

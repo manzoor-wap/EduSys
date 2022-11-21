@@ -13,6 +13,6 @@ namespace Datastore.Abstract.Models.Impl
         public DateTime CreatedDate { get; set; }
         public int? UpdateBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public StatusType Status { get; set; }
+        public StatusType Status { get; set; }       
     }
 }

@@ -15,5 +15,12 @@ namespace Datastore.Abstract
         Task<bool> CreateUser(User user);
         Task<bool> DeleteUser(User user);
         Task<bool> UpdateUser(User user);
+
+
+        Task<IBook> GetBook(int id);
+        Task<IEnumerable<IBook>> GetBooks();
+        Task<bool> CreateBook(Book book);
+        Task<bool> DeleteBook(Book book);
+        Task<bool> UpdateBook(Book book);
     }
 }

@@ -32,5 +32,34 @@ namespace Datastore.Impl
                         Status = StatusType.Active
                     }
         };
+
+
+
+
+        public List<Book> Books = new List<Book>()
+        {
+                    new Book()
+                    {
+                        BookId = 1,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-10),
+                       
+                        Name = "C++",
+                        
+                        Status = StatusType.Active
+                    },
+                    new Book()
+                    {
+                        BookId = 2,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-9),
+                        
+                        Name = "C",
+                        
+                        Status = StatusType.Active
+                    }
+        };
     }
 }
