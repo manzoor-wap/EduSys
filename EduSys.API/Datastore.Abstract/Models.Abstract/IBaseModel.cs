@@ -10,7 +10,10 @@ namespace Datastore.Abstract.Models.Abstract
          int CompanyId { get; set; }
          int CreatedBy { get; set; }
          int? UpdateBy { get; set; }
-         DateTime? UpdatedDate { get; set; }
+
+        DateTime CreatedDate { get; set; }
+
+        DateTime? UpdatedDate { get; set; }
          StatusType Status { get; set; }
     }
 }

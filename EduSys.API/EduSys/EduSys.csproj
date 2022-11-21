@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BusinessObject.Abstract\BusinessObject.Abstract.csproj" />
     <ProjectReference Include="..\BusinessObject.Impl\BusinessObject.Impl.csproj" />
     <ProjectReference Include="..\Datastore.Abstract\Datastore.Abstract.csproj" />
