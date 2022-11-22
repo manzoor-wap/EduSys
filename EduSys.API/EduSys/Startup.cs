@@ -30,8 +30,11 @@ namespace EduSys
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddScoped<IUserBusinessObject, UserBusinessObject>();
             services.AddScoped<IUser, User>();
+            services.AddScoped<ICourseBusinessObject, CourseBusinessObject>();
+            services.AddScoped<ICourse, Course>();
 
             services.AddScoped<IBookBusinessObject, BookBusinessObject>();
             services.AddScoped<IBook, Book>();

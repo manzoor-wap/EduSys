@@ -22,5 +22,12 @@ namespace Datastore.Abstract
         Task<bool> CreateBook(Book book);
         Task<bool> DeleteBook(Book book);
         Task<bool> UpdateBook(Book book);
+
+
+        Task<ICourse> GetCourse(int id);
+        Task<IEnumerable<ICourse>> GetCourses();
+        Task<bool> CreateCourse(Course course);
+        Task<bool> DeleteCourse(Course course);
+        Task<bool> UpdateCourse(Course course);
     }
 }

@@ -21,7 +21,7 @@ namespace Datastore.Impl
             {
                 datastore.Users.Add(user);
                 return true;
-            });            
+            });
         }
 
         public async Task<bool> DeleteUser(User user)
@@ -37,32 +37,34 @@ namespace Datastore.Impl
         {
             return await Task.Run(() =>
             {
-                return datastore.Users.Find(u => u.UserId == id);
+                return datastore.Users.Find(u => u.Id == id);
             });
         }
 
         public async Task<IEnumerable<IUser>> GetUsers()
         {
-            return await Task.Run(() => {
+            return await Task.Run(() =>
+            {
                 return datastore.Users;
             });
-            
+
         }
 
         public async Task<bool> UpdateUser(User user)
         {
-            return await Task.Run(() => {
-                User existingUser= datastore.Users.Find(u => u.UserId == user.UserId);
+            return await Task.Run(() =>
+            {
+                User existingUser = datastore.Users.Find(u => u.Id == user.Id);
 
                 ///existingUser.CompanyId = user.CompanyId;
-                
+
                 existingUser.Name = user.Name;
                 existingUser.Phone = user.Phone;
                 existingUser.Status = user.Status;
                 existingUser.UpdateBy = user.UpdateBy;
                 existingUser.UpdatedDate = DateTime.Now;
 
-                
+
                 return true;
             });
         }
@@ -71,13 +73,14 @@ namespace Datastore.Impl
         {
             return await Task.Run(() =>
             {
-                return datastore.Books.Find(u => u.BookId == id);
+                return datastore.Books.Find(u => u.Id == id);
             });
         }
 
         public async Task<IEnumerable<IBook>> GetBooks()
         {
-            return await Task.Run(() => {
+            return await Task.Run(() =>
+            {
                 return datastore.Books;
             });
         }
@@ -102,16 +105,70 @@ namespace Datastore.Impl
 
         public async Task<bool> UpdateBook(Book book)
         {
-            return await Task.Run(() => {
-                Book existingBook = datastore.Books.Find(u => u.BookId == book.BookId);
+            return await Task.Run(() =>
+            {
+                Book existingBook = datastore.Books.Find(u => u.Id == book.Id);
 
                 ///existingUser.CompanyId = user.CompanyId;
 
                 existingBook.Name = book.Name;
-               
+
                 existingBook.Status = book.Status;
                 existingBook.UpdateBy = book.UpdateBy;
                 existingBook.UpdatedDate = DateTime.Now;
+
+
+                return true;
+            });
+        }
+
+        public async Task<ICourse> GetCourse(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Courses.Find(u => u.Id == id);
+            });
+        }
+
+        public async Task<IEnumerable<ICourse>> GetCourses()
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Courses;
+            });
+        }
+
+        public async Task<bool> CreateCourse(Course course)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Courses.Add(course);
+                return true;
+            });
+        }
+
+        public async Task<bool> DeleteCourse(Course course)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Courses.Remove(course);
+                return true;
+            });
+        }
+
+        public async Task<bool> UpdateCourse(Course course)
+        {
+            return await Task.Run(() =>
+            {
+                Course existingCourse = datastore.Courses.Find(u => u.Id == course.Id);
+
+                ///existingUser.CompanyId = user.CompanyId;
+
+                existingCourse.CourseName = course.CourseName;
+
+                existingCourse.Status = course.Status;
+                existingCourse.UpdateBy = course.UpdateBy;
+                existingCourse.UpdatedDate = DateTime.Now;
 
 
                 return true;

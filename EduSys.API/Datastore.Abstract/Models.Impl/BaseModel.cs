@@ -8,6 +8,8 @@ namespace Datastore.Abstract.Models.Impl
 {
     public class BaseModel :IBaseModel
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
         public int CompanyId { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }

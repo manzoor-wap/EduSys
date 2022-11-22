@@ -7,8 +7,8 @@ namespace Datastore.Abstract.Models.Impl
 {
    public class User : BaseModel,IUser
     {
-        public int UserId { get; set; }
-        public string Name { get; set; }
+        
+        
 
         public string Email { get; set; }
 
