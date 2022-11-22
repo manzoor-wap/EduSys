@@ -6,9 +6,9 @@ namespace Datastore.Abstract.Models.Abstract
 {
     public interface IBook : IBaseModel
     {
-        public int BookId { get; set; }
+        
 
-        public string Name { get; set; }
+        public string Author { get; set; }
 
 
 

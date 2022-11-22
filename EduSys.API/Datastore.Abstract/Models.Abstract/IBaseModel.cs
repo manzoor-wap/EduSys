@@ -7,7 +7,9 @@ namespace Datastore.Abstract.Models.Abstract
 {
    public interface IBaseModel
     {
-         int CompanyId { get; set; }
+        int Id { get; set; }
+        string Name { get; set; }
+        int CompanyId { get; set; }
          int CreatedBy { get; set; }
          int? UpdateBy { get; set; }
 

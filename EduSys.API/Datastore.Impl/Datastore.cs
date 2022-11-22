@@ -11,7 +11,7 @@ namespace Datastore.Impl
         {
                     new User()
                     {
-                        UserId = 1,
+                        Id = 1,
                         CompanyId = 1,
                         CreatedBy = 1,
                         CreatedDate = DateTime.Now.AddDays(-10),
@@ -22,7 +22,7 @@ namespace Datastore.Impl
                     },
                     new User()
                     {
-                        UserId = 2,
+                        Id = 2,
                         CompanyId = 1,
                         CreatedBy = 1,
                         CreatedDate = DateTime.Now.AddDays(-9),
@@ -40,24 +40,50 @@ namespace Datastore.Impl
         {
                     new Book()
                     {
-                        BookId = 1,
+                        Id = 1,
                         CompanyId = 1,
                         CreatedBy = 1,
                         CreatedDate = DateTime.Now.AddDays(-10),
-                       
+
                         Name = "C++",
-                        
+
                         Status = StatusType.Active
                     },
                     new Book()
                     {
-                        BookId = 2,
+                        Id = 2,
                         CompanyId = 1,
                         CreatedBy = 1,
                         CreatedDate = DateTime.Now.AddDays(-9),
-                        
+
                         Name = "C",
-                        
+
+                        Status = StatusType.Active
+                    }
+        };
+
+        public List<Course> Courses = new List<Course>()
+        {
+                    new Course()
+                    {
+                        Id = 1,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-10),
+
+                        CourseName = "BCA",
+
+                        Status = StatusType.Active
+                    },
+                    new Course()
+                    {
+                        Id = 2,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-9),
+
+                        CourseName = " B.SC",
+
                         Status = StatusType.Active
                     }
         };
