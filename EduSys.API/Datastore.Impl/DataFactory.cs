@@ -174,5 +174,58 @@ namespace Datastore.Impl
                 return true;
             });
         }
+
+        public async Task<IAttendance> GetAttendance(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Attendances.Find(u => u.Id == id);
+            });
+        }
+
+        public async Task<IEnumerable<IAttendance>> GetAttendances()
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Attendances;
+            });
+        }
+
+        public async Task<bool> CreateAttendance(Attendance attendance)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Attendances.Add(attendance);
+                return true;
+            });
+        }
+
+        public async Task<bool> DeleteAttendance(Attendance attendance)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Attendances.Remove(attendance);
+                return true;
+            });
+        }
+
+        public async Task<bool> UpdateAttendance(Attendance attendance)
+        {
+            return await Task.Run(() =>
+            {
+                Attendance existingAttendance = datastore.Attendances.Find(u => u.Id == attendance.Id);
+
+                ///existingUser.CompanyId = user.CompanyId;
+
+                existingAttendance.Name = attendance.Name;
+
+                existingAttendance.Status = attendance.Status;
+                existingAttendance.UpdateBy = attendance.UpdateBy;
+                existingAttendance.UpdatedDate = DateTime.Now;
+
+
+                return true;
+            });
+        }
     }
 }

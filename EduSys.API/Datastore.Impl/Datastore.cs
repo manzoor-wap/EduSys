@@ -87,5 +87,31 @@ namespace Datastore.Impl
                         Status = StatusType.Active
                     }
         };
+       
+        public List<Attendance> Attendances = new List<Attendance>()
+        {
+                    new Attendance()
+                    {
+                        Id = 1,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-10),
+                         Email = "gmail@rajinikanth.com",
+                        Name = "Rajini",
+                        Phone = "987654321",
+                        Status = StatusType.Active
+                    },
+                    new Attendance()
+                    {
+                        Id = 2,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-9),
+                       Email = "gmail@vijayakanth.com",
+                        Name = "vijay",
+                        Phone = "987654322",
+                        Status = StatusType.Active
+                    }
+        };
     }
 }

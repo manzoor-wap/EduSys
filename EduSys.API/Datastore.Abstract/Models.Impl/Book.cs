@@ -7,7 +7,7 @@ namespace Datastore.Abstract.Models.Impl
 {
     public class Book : BaseModel, IBook
     {
-        
-        public string Author { get ; set ; }
+       
+        public string Author { get; set; }
     }
 }

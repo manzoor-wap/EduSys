@@ -11,8 +11,8 @@ namespace BusinessObject.Abstract
     {
         Task<ICourse> GetCourse(int id);
         Task<IEnumerable<ICourse>> GetCourses();
-        Task<bool> CreateCourse(Course book);
-        Task<bool> DeleteCourse(Course book);
-        Task<bool> UpdateCourse(Course book);
+        Task<bool> CreateCourse(Course course);
+        Task<bool> DeleteCourse(Course course);
+        Task<bool> UpdateCourse(Course course);
     }
 }
