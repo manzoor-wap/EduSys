@@ -36,5 +36,12 @@ namespace Datastore.Abstract
         Task<bool> CreateAttendance(Attendance attendance);
         Task<bool> DeleteAttendance(Attendance attendance);
         Task<bool> UpdateAttendance(Attendance attendance);
+
+        Task<IFees> GetFees(int id);
+        Task<IEnumerable<IFees>> GetFeess();
+        Task<bool> CreateFees(Fees fees);
+        Task<bool> DeleteFees(Fees fees);
+        Task<bool> UpdateFees(Fees fees);
     }
 }
+
