@@ -281,5 +281,58 @@ namespace Datastore.Impl
             });
         }
 
+        public async Task<ITimeTable> GetTimeTable(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.TimeTables.Find(u => u.Id == id);
+            });
+        }
+
+        public async Task<IEnumerable<ITimeTable>> GetTimeTables()
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.TimeTables;
+            });
+        }
+
+        public async Task<bool> CreateTimeTable(TimeTable timetable)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.TimeTables.Add(timetable);
+                return true;
+            });
+        }
+
+        public async Task<bool> DeleteTimeTable(TimeTable timetable)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.TimeTables.Remove(timetable);
+                return true;
+            });
+        }
+
+        public async Task<bool> UpdateTimeTable(TimeTable timetable)
+        {
+            return await Task.Run(() =>
+            {
+                TimeTable existingTimeTable = datastore.TimeTables.Find(u => u.Id == timetable.Id);
+
+                ///existingUser.CompanyId = user.CompanyId;
+
+                existingTimeTable.Name = timetable.Name;
+
+                existingTimeTable.Status = timetable.Status;
+                existingTimeTable.UpdateBy = timetable.UpdateBy;
+                existingTimeTable.UpdatedDate = DateTime.Now;
+
+
+                return true;
+            });
+        }
+
     }
 }
