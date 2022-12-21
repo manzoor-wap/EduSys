@@ -227,5 +227,59 @@ namespace Datastore.Impl
                 return true;
             });
         }
+
+        public async Task<IFees> GetFees(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Feess.Find(u => u.Id == id);
+            });
+        }
+
+        public async Task<IEnumerable<IFees>> GetFeess()
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Feess;
+            });
+        }
+
+        public async Task<bool> CreateFees(Fees fees)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Feess.Add(fees);
+                return true;
+            });
+        }
+
+        public async Task<bool> DeleteFees(Fees fees)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Feess.Remove(fees);
+                return true;
+            });
+        }
+
+        public async Task<bool> UpdateFees(Fees fees)
+        {
+            return await Task.Run(() =>
+            {
+                Fees existingFees = datastore.Feess.Find(u => u.Id == fees.Id);
+
+                ///existingUser.CompanyId = user.CompanyId;
+
+                existingFees.Name = fees.Name;
+
+                existingFees.Status = fees.Status;
+                existingFees.UpdateBy = fees.UpdateBy;
+                existingFees.UpdatedDate = DateTime.Now;
+
+
+                return true;
+            });
+        }
+
     }
 }
