@@ -48,6 +48,12 @@ namespace Datastore.Abstract
         Task<bool> CreateTimeTable(TimeTable timetable);
         Task<bool> DeleteTimeTable(TimeTable timetable);
         Task<bool> UpdateTimeTable(TimeTable timetable);
+
+        Task<IMarks> GetMarks(int id);
+        Task<IEnumerable<IMarks>> GetMarkss();
+        Task<bool> CreateMarks(Marks marks);
+        Task<bool> DeleteMarks(Marks marks);
+        Task<bool> UpdateMarks(Marks marks);
     }
 }
 

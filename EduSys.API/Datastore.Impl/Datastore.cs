@@ -167,5 +167,31 @@ namespace Datastore.Impl
                         Status = StatusType.Active
                     }
         };
+
+        public List<Marks> Markss = new List<Marks>()
+        {
+                    new Marks()
+                    {
+                        Id = 1,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-10),
+
+                        Name = "C++",
+
+                        Status = StatusType.Active
+                    },
+                    new Marks()
+                    {
+                        Id = 2,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-9),
+
+                        Name = "C",
+
+                        Status = StatusType.Active
+                    }
+        };
     }
 }

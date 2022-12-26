@@ -334,5 +334,58 @@ namespace Datastore.Impl
             });
         }
 
+        public async Task<IMarks> GetMarks(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Markss.Find(u => u.Id == id);
+            });
+        }
+
+        public async Task<IEnumerable<IMarks>> GetMarkss()
+        {
+            return await Task.Run(() =>
+            {
+                return datastore.Markss;
+            });
+        }
+
+        public async Task<bool> CreateMarks(Marks marks)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Markss.Add(marks);
+                return true;
+            });
+        }
+
+        public async Task<bool> DeleteMarks(Marks marks)
+        {
+            return await Task.Run(() =>
+            {
+                datastore.Markss.Remove(marks);
+                return true;
+            });
+        }
+
+        public async Task<bool> UpdateMarks(Marks marks)
+        {
+            return await Task.Run(() =>
+            {
+                Marks existingMarks = datastore.Markss.Find(u => u.Id == marks.Id);
+
+                ///existingUser.CompanyId = user.CompanyId;
+
+                existingMarks.Name = marks.Name;
+
+                existingMarks.Status = marks.Status;
+                existingMarks.UpdateBy = marks.UpdateBy;
+                existingMarks.UpdatedDate = DateTime.Now;
+
+
+                return true;
+            });
+        }
+
     }
 }
