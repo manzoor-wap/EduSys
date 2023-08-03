@@ -42,6 +42,18 @@ namespace Datastore.Abstract
         Task<bool> CreateFees(Fees fees);
         Task<bool> DeleteFees(Fees fees);
         Task<bool> UpdateFees(Fees fees);
+
+        Task<ITimeTable> GetTimeTable(int id);
+        Task<IEnumerable<ITimeTable>> GetTimeTables();
+        Task<bool> CreateTimeTable(TimeTable timetable);
+        Task<bool> DeleteTimeTable(TimeTable timetable);
+        Task<bool> UpdateTimeTable(TimeTable timetable);
+
+        Task<IMarks> GetMarks(int id);
+        Task<IEnumerable<IMarks>> GetMarkss();
+        Task<bool> CreateMarks(Marks marks);
+        Task<bool> DeleteMarks(Marks marks);
+        Task<bool> UpdateMarks(Marks marks);
     }
 }
 

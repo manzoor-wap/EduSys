@@ -139,5 +139,59 @@ namespace Datastore.Impl
                         Status = StatusType.Active
                     }
         };
+
+        public List<TimeTable> TimeTables = new List<TimeTable>()
+        {
+                    new TimeTable()
+                    {
+                        Id = 1,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-10),
+
+                        ClassTiming = "9:00 AM - 10:00 AM",
+                        Subject = "Maths",
+
+                        Status = StatusType.Active
+                    },
+                    new TimeTable()
+                    {
+                        Id = 2,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-9),
+
+                        ClassTiming = "10:00 AM - 11:00 AM",
+                        Subject = "Chemistry",
+
+                        Status = StatusType.Active
+                    }
+        };
+
+        public List<Marks> Markss = new List<Marks>()
+        {
+                    new Marks()
+                    {
+                        Id = 1,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-10),
+
+                        Name = "C++",
+
+                        Status = StatusType.Active
+                    },
+                    new Marks()
+                    {
+                        Id = 2,
+                        CompanyId = 1,
+                        CreatedBy = 1,
+                        CreatedDate = DateTime.Now.AddDays(-9),
+
+                        Name = "C",
+
+                        Status = StatusType.Active
+                    }
+        };
     }
 }
